@@ -1,0 +1,20 @@
+<h1>Facebook: Bug within OAuth-Login</h1>
+
+Using facebook JS-OAuth with scope: 'friend_list' returns an error.
+
+<h2>Without Scope</h2>
+<fb:login-button autologoutlink="true"></fb:login-button>
+
+You should not see any errors here.
+
+<h2>With non-existing Scope</h2>
+<fb:login-button autologoutlink="true" scope="non_existing_scope"></fb:login-button>
+
+You should not see a LoginButton, but an error.
+
+<h2>With 'friend_list' scope</h2>
+<fb:login-button autologoutlink="true" scope="friend_list"></fb:login-button>
+
+<br/>
+You should see a LoginButton, but clicking it results in an
+http request to facebook with an 500er error code.
